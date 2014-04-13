@@ -16,12 +16,15 @@ acm-conventions
 как хочешь
 
 Что сейчас изучается/решается
+
 Ralor:
  - topcoder/codeforces
  - тренировки Харьков - 2014 (лекция, тренировка CF, разбор)
  - сборник меньшикова на informatics.mccme.ru
+
 UFTGs:
- -
+ - ***
+
 SirNickolas:
- -
+ - ***
  
