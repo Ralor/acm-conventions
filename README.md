@@ -20,7 +20,13 @@ acm-conventions
 Ralor:
  - topcoder/codeforces
  - тренировки Харьков - 2014 (лекция, тренировка CF, разбор)
+	http://www.youtube.com/watch?v=c3i-ShxU0TY
+	http://codeforces.ru/gym/100371
+	http://www.youtube.com/watch?v=cUUP-yIxY_M
+ - видеолекции ЛКШ-2013 (группа B')
+	http://sis.khashaev.ru/
  - сборник меньшикова на informatics.mccme.ru
+	http://informatics.mccme.ru//mod/statements/view3.php?id=634&chapterid=611#1
 
 UFTGs:
  - ***
