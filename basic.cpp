@@ -3,12 +3,10 @@
 // --------------------------
 #define _USE_MATH_DEFINES
 #define _CRT_SECURE_NO_WARNINGS
-// scanf/printf 
 #include <iostream>
 #include <cstdio>
-// fabs, sqrt, log
+#include <cstdlib>
 #include <cmath>
-// sort
 #include <algorithm>
 #include <string>
 #include <sstream>

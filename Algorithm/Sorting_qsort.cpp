@@ -2,7 +2,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstdio>
-#include <cstdlib>
 #include <cmath>
 #include <algorithm>
 #include <string>
@@ -38,6 +37,23 @@ typedef vector<vd> vvd;
 #define mp(x,y) make_pair((x),(y))
 #define dbg(x) cout << #x << " : " << x << "\n"
 
+void qSort(vi *a, int mn, int mx) {
+	vi &M = *a;
+	int l = mn,
+		r = mx;
+	int x = M[l + rand()%(r-l+1)]; // no hacks please
+	while(1)
+	{
+		while(M[l] < x) l++;  
+        while(M[r] > x) r--; 
+        if(l <= r)     
+			swap(M[l], M[r]), ++l, --r;                     
+		if (l >= r) break;
+	}
+	if (mn < r) qSort(a, mn ,r);
+	if (l < mx) qSort(a, l, mx);
+}
+
 int main() {
 	//freopen(TASK ".in", "r", stdin);
 	//freopen(TASK ".out", "w", stdout);  
@@ -48,6 +64,22 @@ int main() {
 	ios_base::sync_with_stdio(0);    
 	cin.tie(0);
 
+	// will be checked in future
+	srand(0xbeef); rand();
+	int n = 15;
+	vi a(n); 
+	for(int i = 0; i < n; i++) 
+		a[i] = rand()%50;
+
+	for(int i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << "\n";
+
+	qSort(&a,0,n-1);
+	
+	for(int i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << "\n";
 
 
 	return 0;
