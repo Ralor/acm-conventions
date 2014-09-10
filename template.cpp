@@ -66,10 +66,10 @@ int main() {#   ifdef _DEBUG
         freopen("input.txt", "r", stdin);
         //freopen("output.txt", "w", stdout);
         //freopen(TASK ".in", "r", stdin);
-        //freopen(TASK ".out", "w", stdout);  
+        //freopen(TASK ".out", "w", stdout);
         //freopen("info.txt", "r", stdin);
         //freopen("info.txt", "w", stdout);#   endif
-    ios_base::sync_with_stdio(false);    
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
     return 0;
