@@ -14,23 +14,4 @@ acm-conventions
 
 Решения будут заливаться в папку Solutions по контестам или архивам (а может навалом, посмотрим как приживется). Начинаться должны с первой буквы фамилии кодировщика, или T, если писали вместе (чтобы после фразы "посоны смарите" искать было проще). Можно таким образом назвать какую-нибудь папку и туда скалдывать уже 
 как хочешь
-
-Что сейчас изучается/решается
-
-Ralor:
- - topcoder/codeforces
- - тренировки Харьков - 2014 (лекция, тренировка CF, разбор)
-	http://www.youtube.com/watch?v=c3i-ShxU0TY
-	http://codeforces.ru/gym/100371
-	http://www.youtube.com/watch?v=cUUP-yIxY_M
- - видеолекции ЛКШ-2013 (группа B')
-	http://sis.khashaev.ru/
- - сборник меньшикова на informatics.mccme.ru
-	http://informatics.mccme.ru//mod/statements/view3.php?id=634&chapterid=611#1
-
-UFTGs:
- - ***
-
-SirNickolas:
- - ***
  
