@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  <meta name="author" content="Michael Goldwasser">
+  <title>Digit Sum</title>
+
+  
+  
+  <style type="text/css">
+      body { background-color: white; }
+      h1 { text-align: center; }
+      img.floatRight {
+          float: right;
+          margin: 14px;
+      }
+      table.files{ margin: 0 auto; }
+      table.example
+      {
+          border-style: outset;
+          border-width: 1px;
+      }
+      table.example td
+      {
+          font-family: monospace;
+          vertical-align: top;
+          border-style: inset;
+          border-width: 1px;
+          padding: 10px;
+      }
+      table.illus td
+      {
+          padding: 0 40px;
+          text-align: center;
+          font-size: 80%;
+          font-style: italic;
+      }
+      table.enumerate
+      {
+          border-style: outset;
+          border-width: 1px;
+      }
+      table.enumerate td
+      {
+          white-space: pre;
+          font-family: monospace;
+          vertical-align: top;
+          border-style: inset;
+          border-width: 1px;
+          padding: 3px;
+      }
+    </style>
+</head><body>
+<h1>Problem F: Digit Sum</h1>
+
+<table class="files">
+
+  <tbody>
+    <tr>
+      <td>Source file:</td>
+      <td> <tt>digitsum.</tt>{<tt>c</tt>, <tt>cpp</tt>, <tt>java</tt>}
+      </td>
+    </tr>
+    <tr>
+      <td>Input file:</td>
+      <td><tt>digitsum.in</tt></td>
+    </tr>
+  </tbody>
+</table>
+
+<p> When Grace was in third grade, her elementary school teacher
+assigned her the following problem: </p>
+
+<blockquote><em> What is the smallest possible sum of two numbers that
+together use the numerals <em>1</em>, <em>2</em>, <em>7</em>, <em>8</em>,
+and <em>9</em>? </em></blockquote>
+
+<p> Grace figured out that the answer to this problem is 207 (for
+example, as 78 + 129), but when the teacher assigned four pages of
+similar problems as homework, Grace got bored. It turns out that Grace
+was a rather advanced third grader, so she decided that it would be
+more fun to write a computer program to solve such problems. Surely you
+can do the same! </p>
+
+<p> <b>Input:</b>&nbsp; Each problem is described on a single line.
+The line begins with an integer <em>N</em>, such that <nobr>2 &#8804; <em>N</em>
+&#8804; 14</nobr>, designating the number of numerals included in the
+problem. Following that are those <em>N</em> numerals. There will
+always be at least 2 numerals that are nonzero. The end of the input is
+designated by a line containing only the value&nbsp;0. </p>
+
+<p> <b>Output:</b>&nbsp; For each case, output a line with the minimum
+sum <em>S</em> that can be achieved. Please keep in mind that by
+standard convention, the numeral <em>0</em> cannot appear as the first
+digit of either summand. </p>
+
+<table class="example">
+
+  <thead> <tr>
+    <td><b>Example input:</b></td>
+    <td><b>Example output:</b></td>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <td><pre>5 1 2 7 8 9<br>6 3 4 2 2 2 2<br>9 0 1 2 3 4 0 1 2 3<br>0</pre></td>
+      <td><pre>207<br>447<br>11257</pre></td>
+    </tr>
+  </tbody>
+</table>
+
+<small><i><br>
+ACM Mid-Central Programming Competition 2013</i></small>
+</body></html>

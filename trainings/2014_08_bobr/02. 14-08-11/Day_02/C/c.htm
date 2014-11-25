@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html><head>
+
+
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="author" content="Michael Goldwasser"><title>Missing Pages</title>
+    
+    <style type="text/css">
+      body { background-color: white; }
+      h1 { text-align: center; }
+      img.floatRight {
+          float: right;
+          margin: 14px;
+      }
+      table.files{ margin: 0 auto; }
+      table.example
+      {
+          border-style: outset;
+          border-width: 1px;
+      }
+      table.example td
+      {
+          white-space: pre;
+          font-family: monospace;
+          vertical-align: top;
+          border-style: inset;
+          border-width: 1px;
+          padding: 10px;
+      }
+      table.illus td
+      {
+          padding: 0 40px;
+          text-align: center;
+          font-size: 80%;
+          font-style: italic;
+      }
+      table.enumerate
+      {
+          border-style: outset;
+          border-width: 1px;
+      }
+      table.enumerate td
+      {
+          white-space: pre;
+          font-family: monospace;
+          vertical-align: top;
+          border-style: inset;
+          border-width: 1px;
+          padding: 3px;
+      }
+    @media print {
+      .page {
+        page-break-before: always;
+      }
+    }
+    </style></head><body>
+    <h1>Problem C: Missing Pages</h1>
+    <table class="files">
+      <tbody>
+        <tr>
+          <td>Source file:</td>
+          <td>
+            <tt>missing.</tt>{<tt>c</tt>, <tt>cpp</tt>, <tt>java</tt>}
+          </td>
+        </tr>
+        <tr>
+          <td>Input file:</td>
+          <td><tt>missing.in</tt></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+    Long ago, there were periodicals called <em>newspapers</em>,
+    and these newspapers were printed on <em>paper</em>, and people
+    used to <em>read</em> them, and perhaps even share them.
+    One unfortunate thing about this form of media is that every so
+    often, someone would like an article so much, they would take it
+    with them, leaving the rest of the newspaper behind for others to
+    enjoy. Unfortunately, because of the way that paper was folded,
+    not only would the page with that article be gone, so would the
+    page on the reverse side and also two other pages that were
+    physically on the same sheet of folded paper.
+    </p>
+
+    <p>
+    For this problem we assume the classic approach is used for
+    folding paper to make a booklet that has a number of pages that is
+    a multiple of four. As an example, a newspaper with 12 pages would
+    be made of three sheets of paper (see figure below). One sheet
+    would have pages 1 and 12 printed on one side, and pages 2 and 11
+    printed on the other. Another 
+    piece of paper would have pages 3 and 10 printed on one side and 4
+    and 9 printed on the other. The third sheet would have pages
+    5, 6, 7, and 8.
+    </p>
+
+    <p><img src="Missing%20Pages_files/newspaper.png"></p>
+
+    <p>
+    When one numbered page is taken from the newspaper, the question
+    is what other pages disappear.
+    </p>
+
+    
+    <p>
+      <b>Input:</b>&nbsp; Each test case will be described with two
+      integers <em>N</em> and <em>P</em>, on a line, where
+      <nobr>4 &#8804; <em>N</em> &#8804; 1000</nobr> is a multiple of four
+      that designates the length of the
+      newspaper in terms of numbered pages, and
+      <nobr>1 &#8804; <em>P</em> &#8804; <em>N</em></nobr> is a page that
+      has been taken. The end of the input is designated by a line
+      containing only the value&nbsp;0.
+    </p>
+    <p>
+      <b>Output:</b>&nbsp; For each case, output, in increasing order,
+      the page numbers for the other three pages that will be missing.
+    </p>
+
+  <table cellpadding="6" border="1">
+      <thead>
+        <tr>
+          <td><b>Example input:</b></td>
+          <td><b>Example output:</b></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family: monospace;">12 2<br>
+12 9<br>
+8 3<br>
+0</td>
+          <td style="font-family: monospace;">1 11 12<br>
+3 4 10<br>
+4 5 6<br><br></td>
+        </tr>
+      </tbody>
+    </table><small><i><br>
+ACM Mid-Central Programming Competition 2013</i></small>
+    </body></html>

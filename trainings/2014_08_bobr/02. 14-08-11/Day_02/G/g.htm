@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  <meta name="author" content="Michael Goldwasser">
+  <title>Cash Cow</title>
+
+  
+  
+  <style type="text/css">
+    body {
+      background-color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    img.floatRight {
+      float: right;
+      margin: 14px;
+    }
+    table.files{
+      margin: 0 auto;
+    }
+    table.example {
+      border-style: outset;
+      border-width: 1px;
+    }
+    table.example td {
+      font-family: monospace;
+      vertical-align: top;
+      border-style: inset;
+      border-width: 1px;
+      padding: 10px;
+    }
+    table.illus td {
+      padding: 0 40px;
+      text-align: center;
+      font-size: 80%;
+      font-style: italic;
+    }
+    table.enumerate {
+      border-style: outset;
+      border-width: 1px;
+    }
+    table.enumerate td {
+      white-space: pre;
+      font-family: monospace;
+      vertical-align: top;
+      border-style: inset;
+      border-width: 1px;
+      padding: 3px;
+    }
+    @media print {
+      .page {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head><body>
+<h1>Problem G: Cash Cow</h1>
+
+<table class="files">
+
+  <tbody>
+    <tr>
+      <td>Source file:</td>
+      <td> <tt>cashcow.</tt>{<tt>c</tt>, <tt>cpp</tt>, <tt>java</tt>}
+      </td>
+    </tr>
+    <tr>
+      <td>Input file:</td>
+      <td><tt>cashcow.in</tt></td>
+    </tr>
+  </tbody>
+</table>
+
+<p> Years before Candy Crush became the wildly popular game that may
+lead developer Saga to a multi-billion dollar IPO, there was an online
+game named Cash Cow, which remains part of the Webkinz platform. </p>
+
+<p> This single-player game has a board with 12 rows and 10 columns, as
+shown in Figure&nbsp;1. We label the rows 1 through 12, starting at 
+the bottom, and the columns <i>a</i> through <i>j</i>, starting at the left.
+Each grid location can either have a colored
+circle or be empty. (We use uppercase characters to denote distinct
+colors, for example with B=blue, R=red, and Y=yellow.) On each turn,
+the player clicks on a circle. The computer determines the largest
+"cluster" to which that circle belongs, where a cluster is defined to
+include the initial circle, any of its immediate horizontal and
+vertical neighbors with matching color, those circles' neighbors with
+matching colors, and so forth. For example, if a user were to click on
+the blue circle at cell (h10) in Figure&nbsp;1, its cluster consists of
+those cells shown with empty circles in Figure&nbsp;2. </p>
+
+<center>
+<table style="text-align: center; width: 406px; height: 204px;" cellpadding="2" cellspacing="2" border="1">
+  <tbody>
+    <tr>
+      <td><img src="Cash%20Cow_files/original.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/during_h10.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/after_h10.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Figure 1</td>
+      <td>Figure 2</td>
+      <td>Figure 3</td>
+    </tr>
+    <tr>
+      <td colspan="3"> Processing a click on cell h10. </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<p> The player's turn is processed as follows. If the indicated grid
+cell belongs to a cluster of only one or two circles (or if there is no
+circle at that cell), the turn is wasted. Otherwise, with a cluster of
+3 or more circles, all circles in the cluster are removed from the
+board. Remaining circles are then compacted as follows: </p>
+
+<ol>
+
+  <li> Circles fall vertically, to fill in any holes in their column. </li>
+  <li> If one or more columns have become empty, all remaining columns
+slide leftward (with each nonempty column remaining intact), such that
+they are packed against the left edge of the board. </li>
+</ol>
+
+<p> For example, Figure&nbsp;3 shows the board after the cluster of
+Figure&nbsp;2 was removed after the click on (h10).
+</p>
+
+<p class="page">
+As another example,
+Figure&nbsp;4 below, portrays the processing of a subsequent click on
+cell (j1). During that turn, column&nbsp;(e) becomes empty, and the
+resulting columns (f) through (j) slide to become columns (e) through
+(i), respectively. Figure&nbsp;5 provides one further example in which
+several columns are compacted. </p>
+
+<center>
+<table style="text-align: center; width: 406px; height: 204px;" cellpadding="2" cellspacing="2" border="1">
+  <tbody>
+    <tr>
+      <td><img src="Cash%20Cow_files/after_h10.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/during_j1.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/after_j1.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"> Figure 4: Processing a click on cell j1. </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<br>
+
+<center>
+<table style="text-align: center; width: 406px; height: 204px;" cellpadding="2" cellspacing="2" border="1">
+  <tbody>
+    <tr>
+      <td><img src="Cash%20Cow_files/after_j1.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/during_g2.png"><br>
+      </td>
+      <td><img src="Cash%20Cow_files/after_g2.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"> Figure 5: Processing a click on cell g2. </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<br>
+
+<p> <b>Input:</b> The input will consist of multiple games, each
+played with a new board. For each game, the input begins with a number <em>T</em>
+that denotes the number of turns that the player will be making, with <nobr>1
+&#8804; <em>T</em> &#8804; 20</nobr>. Following that will be an initial board
+configuration, which always has 12 rows and 10 columns per row, with
+uppercase letters used to denote distinct colors. There will never be
+empty cells within the initial board. Following the presentation of the
+initial board will be <em>T</em> additional lines of input, each
+designating a cell of the grid; we rely on the coordinate system
+illustrated in the above figures, with a lowercase letter, from <tt>a</tt>
+to <tt>j</tt>, denoting a column and a number from 1 to 12 that
+denotes a row. We note that if a player clicks on a grid cell that does
+not currently have any circle, that turn is simply wasted. </p>
+
+<p> The end of the entire input will be designated by a line with the
+number 0. </p>
+
+<p class="page"> <b>Output:</b> For each game, output a single line designating the
+the number of circles that remain on the board after all of the
+player's turns are processed. </p>
+
+<table class="example">
+
+  <thead> <tr>
+    <td><b>Example input:</b></td>
+    <td><b>Example output:</b></td>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <td><pre>3<br>RYBBRBYYRY<br>RRRBBBBBRR<br>YRRBRBBBBR<br>RYYBRYYRYY<br>BRBBRBRBRY<br>YYBYRBBRRB<br>RYBBBBRYYY<br>YBRBRBRYRB<br>RYBBBBBBBY<br>YBBRRRRRBB<br>RBBRRBRYRR<br>BBBRRYYYRR<br>h 10<br>j 1<br>g 2<br>3<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYBYYBBBBB<br>YYBYYBBBBB<br>c 2<br>c 12<br>g 1<br>2<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYYYYBBBBB<br>YYBYYBBBBB<br>YYBYYBBBBB<br>g 1<br>c 12<br>0</pre></td>
+      <td><pre>33<br>62<br>2</pre></td>
+    </tr>
+  </tbody>
+</table>
+
+<small><i><br>
+ACM Mid-Central Programming Competition 2013</i></small>
+
+</body></html>

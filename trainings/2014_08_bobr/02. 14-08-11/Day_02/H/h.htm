@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Sort Me</title>
+
+  
+  
+  <meta name="author" content="Andy Harrington">
+
+</head><body style="background-color: white;">
+<h1 style="text-align: center;" align="center"> Problem H: Sort Me
+</h1>
+
+<center>
+<table>
+  <tbody>
+    <tr>
+      <td>Source file:</td>
+      <td><tt>sortme.</tt>{<tt>c</tt>, <tt>cpp</tt>, <tt>java</tt>}</td>
+    </tr>
+    <tr>
+      <td>Input file:</td>
+      <td><tt>sortme.in</tt></td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+We know the normal alphabetical
+order of the English alphabet, and we can then sort words or other
+letter sequences.&nbsp; For instance these words are sorted:<br>
+
+<br>
+
+<div style="margin-left: 40px;">
+ANTLER<br>
+ANY<br>
+COW<br>
+HILL<br>
+HOW<br>
+HOWEVER<br>
+WHATEVER<br>
+ZONE
+</div>
+
+<br>
+
+The standard rules for sorting letter sequences are used: <br>
+
+<ol>
+
+  <li>The first letters are in alphabetical&nbsp; order.</li>
+  <li>Among strings with the same prefix, like the prefix AN in ANTLER
+and ANY, they are ordered by the first character that is different, T
+or Y here.&nbsp; <br>
+  </li>
+  <li>One whole string may be a prefix of another string, like HOW and
+HOWEVER.&nbsp; In this case the longer sequence comes after the shorter
+one.</li>
+</ol>
+
+The Gorellians, at the far end of our galaxy, have discovered various
+samples of English text from our electronic transmissions, but they did
+not find the order of our alphabet.&nbsp; Being a very organized and
+orderly species, they want to have a way of ordering words, even in the
+strange symbols of English.&nbsp; Hence they must determine their own
+order.&nbsp; Unfortunately they cannot agree, and every Gorellian year,
+they argue and settle on a new order.<br>
+
+<br>
+
+For instance, if they agree on the alphabetical order<br>
+
+<br>
+
+<div style="margin-left: 40px;">UVWXYZNOPQRSTHIJKLMABCDEFG<br>
+</div>
+
+<br>
+
+then the words above would be sorted as<br>
+
+<br>
+
+<div style="margin-left: 40px;">
+WHATEVER<br>
+ZONE<br>
+HOW<br>
+HOWEVER<br>
+HILL<br>
+ANY<br>
+ANTLER<br>
+COW<br>
+</div>
+
+<br>
+
+<p class="page">
+The first letters of the words are in <span style="font-style: italic;">their</span>
+alphabetical order.&nbsp; Where words
+have the same prefix, the first differing letter determines the order,
+so the order goes ANY,&nbsp; then ANTLER, since Y is before T in <span style="font-style: italic;">their</span> choice of alphabet.&nbsp;
+Still HOWEVER comes after HOW, since HOW is a
+prefix of HOWEVER.
+</p>
+
+
+<p>
+Dealing with the different alphabetical orders each year by hand
+(or tentacle) is tedious.&nbsp; Your job is to implement sorting with
+the English letters in a specified sequence.
+</p>
+
+<p><b>Input:</b>&nbsp; The input will contain one or more
+datasets.&nbsp; Each dataset will start with a line containing an
+integer <span style="font-style: italic;">n</span> and a string <span style="font-style: italic;">s</span>,
+where s is a permutation of the English uppercase alphabet, used as the
+Gorellians' alphabet in the coming year.&nbsp; The next <span style="font-style: italic;">n</span> lines (1 &#8804; <span style="font-style: italic;">n</span>
+&#8804; 20) will each contain one non-empty string of letters.&nbsp; The
+length of each string will be no more than 30.&nbsp; Following the last
+dataset is a line containing
+only 0.<br>
+</p>
+
+<p><b>Output:</b> The first line of output of each dataset will contain
+"year " followed by the number of the dataset, starting from
+1.&nbsp;&nbsp; The remaining n lines are the <span style="font-style: italic;">n</span> input strings sorted assuming the
+alphabet has the order in <span style="font-style: italic;">s</span>.</p>
+
+<table cellpadding="10" border="1">
+
+  <thead><tr>
+    <td><b>Example input:</b></td>
+    <td><b>Example output:</b></td>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <td style="font-family: monospace;">8
+UVWXYZNOPQRSTHIJKLMABCDEFG<br>
+ANTLER<br>
+ANY<br>
+COW<br>
+HILL<br>
+HOW<br>
+HOWEVER<br>
+WHATEVER<br>
+ZONE<br>
+5 ZYXWVUTSRQPONMLKJIHGFEDCBA<br>
+GO<br>
+ALL<br>
+ACM<br>
+TEAMS<br>
+GO<br>
+10 ZOTFISENWABCDGHJKLMPQRUVXY<br>
+THREE<br>
+ONE<br>
+NINE<br>
+FIVE<br>
+SEVEN<br>
+ZERO<br>
+TWO<br>
+FOUR<br>
+EIGHT<br>
+SIX<br>
+0 </td>
+      <td style="font-family: monospace;" valign="top">year 1<br>
+WHATEVER<br>
+ZONE<br>
+HOW<br>
+HOWEVER<br>
+HILL<br>
+ANY<br>
+ANTLER<br>
+COW<br>
+year 2<br>
+TEAMS<br>
+GO<br>
+GO<br>
+ALL<br>
+ACM<br>
+year 3<br>
+ZERO<br>
+ONE<br>
+TWO<br>
+THREE<br>
+FOUR<br>
+FIVE<br>
+SIX<br>
+SEVEN<br>
+EIGHT<br>
+NINE<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<small><i><br>
+ACM Mid-Central Programming Competition 2013</i></small><br>
+</body></html>

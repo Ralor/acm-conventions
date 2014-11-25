@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  
+  <style type="text/css">
+body { background-color: white; }
+h1 { text-align: center; }
+img.floatRight {
+float: right;
+margin: 14px;
+}
+table.files{ margin: 0 auto; }
+table.example
+{
+border-style: outset;
+border-width: 1px;
+}
+table.example td
+{
+font-family: monospace;
+vertical-align: top;
+border-style: inset;
+border-width: 1px;
+padding: 10px;
+}
+table.illus td
+{
+padding: 0 40px;
+text-align: center;
+font-size: 80%;
+font-style: italic;
+}
+table.enumerate
+{
+border-style: outset;
+border-width: 1px;
+}
+table.enumerate td
+{
+white-space: pre;
+font-family: monospace;
+vertical-align: top;
+border-style: inset;
+border-width: 1px;
+padding: 3px;
+}
+p.page { page-break-before: always; }
+  </style>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Letter Cubes</title>
+  
+
+  
+  
+  <meta name="author" content="Andy Harrington"></head><body style="background-color: white;">
+<h1 style="text-align: center;" align="center">Problem E: Letter Cubes<br>
+</h1>
+
+<center>
+<table>
+  <tbody>
+    <tr>
+      <td>Source file:</td>
+      <td><tt>cubes.</tt>{<tt>c</tt>, <tt>cpp</tt>, <tt>java</tt>}</td>
+    </tr>
+    <tr>
+      <td>Input file:</td>
+      <td><tt>cubes.in</tt></td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<p>
+This problem is based on a
+<a href="http://crpuzzles.com/logic/logic0136.html">puzzle by Randall
+L. Whipkey</a>.
+</p>
+
+<p>
+In the game of Letter Cubes, there are a set of cubes,
+with each face of each cube having a letter of the alphabet, such that
+no letter appears more than once within the entire set. The maximum
+number of cubes
+is 4, allowing for up to 24 of the 26 letters of the alphabet to occur.
+</p>
+
+<p>
+Words are formed by rearranging and turning the cubes
+so that the top letters of all the cubes together spell a word. The 13
+words below have been made using a particular set of cubes. </p>
+
+<div style="margin-left: 40px;">
+CLIP <br>
+CLOG<br>
+CONE<br>
+DISH<br>
+FAZE<br>
+FURL<br>
+MARE<br>
+MOCK<br>
+QUIP<br>
+STEW<br>
+TONY<br>
+VICE<br>
+WARD <br>
+</div>
+
+<p>
+Only 23 distinct letters were used in the above words, so we will tell
+you the extra information that a B is included on one cube. Can you now determine the letters on each
+cube? For the above set of words, there is indeed a unique set of
+cubes.
+We will state this solution in canonical form as
+<br>
+</p>
+
+<div style="margin-left: 40px;">ABCHTU DEKLQY FGIMNW OPRSVZ<br>
+</div>
+
+<br>
+
+Note that the letters on each individual cube are stated as a string
+of characters in alphabetical order, and the four 6-letter strings
+representing the four cubes are also listed
+in alphabetical order.<br>
+
+<br>
+
+<p class="page">
+A simpler example relies on two cubes, forming the following 11
+two-character
+strings (although the puzzles are more fun when the strings are actual
+words, they do not need to be):<br>
+</p>
+
+<br>
+
+<div style="margin-left: 40px;">
+PI<br>
+MU<br>
+HO<br>
+WE<br>
+WO<br>
+BE<br>
+MA<br>
+HI<br>
+RE<br>
+AB<br>
+PY<br>
+</div>
+
+<br>
+
+The only solution for the two cubes forming these strings is<br>
+
+<br>
+
+<div style="margin-left: 40px;">
+AEIOUY BHMPRW<br>
+</div>
+
+<p>
+The same two cubes could be determined without the last pair PY being
+listed, as long as you were told that there was a Y on one
+cube. Your job is to make similar deductions.
+</p>
+
+<p><b>Input:</b>&nbsp; The input will contain from 1 to 20
+datasets.&nbsp; The first line of each dataset will include a positive
+integer <span style="font-style: italic;">n</span> (6 &#8804; <span style="font-style: italic;">n</span> &#8804; 30) and a character <span style="font-style: italic;">c</span>, described below. The next <span style="font-style: italic;">n</span> lines will each contain a string
+of uppercase letters.&nbsp; Each string will be the same length, call
+it <span style="font-style: italic;">k</span>, with 2 &#8804; <span style="font-style: italic;">k</span> &#8804; 4.&nbsp;
+Following the last dataset is a line containing only 0.
+</p>
+
+<p>
+Returning to the issue of the special character, <em>c</em>, on the
+first input line for each dataset, there will be two cases to
+consider. Recall that the implicit set of <em>k</em> cubes must use
+6*<em>k</em> distinct letters on their collective faces
+If all 6*<em>k</em> of those letters appear within the set of strings,
+then the character <span style="font-style: italic;">c</span> on the
+first line of input is a hyphen,
+'-'.&nbsp; Otherwise, the strings have been chosen so that
+only one letter on the cubes does not appear.
+In this case, the character <span style="font-style: italic;">c</span>
+on the first line of input will
+be that undisplayed letter. (For example, the <tt>B</tt> in our
+opening puzzle.)
+</p>
+
+<p><b>Output:</b> There is one line of output for
+each dataset, containing a 6-letter string for each cube, showing the
+letters on the faces of that cube. Each of those strings should have
+its letters in alphabetical order, and the set of strings should be
+given in alphabetical order with respect to each other, with one space
+between each pair.
+<em>We have chosen datasets so that each has a unique solution.</em></p>
+
+<p class="page"></p>
+<table class="example">
+  <thead><tr>
+    <td><b>Example input:</b></td>
+    <td><b>Example output:</b></td>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <td>
+      <pre>13 B<br>CLIP<br>CLOG<br>CONE<br>DISH<br>FAZE<br>FURL<br>MARE<br>MOCK<br>QUIP<br>STEW<br>TONY<br>VICE<br>WARD<br>11 -<br>PI<br>MU<br>HO<br>WE<br>WO<br>BE<br>MA<br>HI<br>RE<br>AB<br>PY<br>10 Y<br>PI<br>MU<br>HO<br>WE<br>WO<br>BE<br>MA<br>HI<br>RE<br>AB<br>0</pre>
+      </td>
+      <td>
+      <pre>ABCHTU DEKLQY FGIMNW OPRSVZ<br>AEIOUY BHMPRW<br>AEIOUY BHMPRW</pre>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<small><i><br>
+ACM Mid-Central Programming Competition 2013</i></small><br>
+
+<br>
+
+</body></html>
