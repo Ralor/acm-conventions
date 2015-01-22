@@ -26,7 +26,7 @@ def problem_number(s):
                 return n
     raise argparse.ArgumentTypeError("invalid problem number: %r" % s)
 
-def ensure_existance(filename):
+def ensure_existence(filename):
     if not os.path.exists(filename):
         raise FileNotFoundError(filename)
     return filename
@@ -69,17 +69,17 @@ def main():
     parser.add_argument("--cog", nargs=argparse.REMAINDER, default=[ ], help="""
         custom arguments that are passed to Cog
     """)
-    parser.add_argument("solution", type=ensure_existance)
-    parser.add_argument("vcxproj", type=ensure_existance)
-    parser.add_argument("vcxproj_filters", type=ensure_existance, metavar="vcxproj-filters")
-    parser.add_argument("source", type=ensure_existance)
+    parser.add_argument("solution", type=ensure_existence)
+    parser.add_argument("vcxproj", type=ensure_existence)
+    parser.add_argument("vcxproj_filters", type=ensure_existence, metavar="vcxproj-filters")
+    parser.add_argument("source", type=ensure_existence)
     parser.add_argument("project_name", metavar="project-name")
     parser.add_argument("source_name", metavar="source-name")
     parser.add_argument("input_name", metavar="input-name")
     parser.add_argument("local", help="""
         local project definition
     """)
-    parser.add_argument("definitions", type=ensure_existance)
+    parser.add_argument("definitions", type=ensure_existence)
 
     args = parser.parse_args()
 
