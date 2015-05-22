@@ -56,7 +56,7 @@ struct debug_t {
     template <typename T>
     debug_t& operator<<(const T& value) {
 #       ifdef VERBOSE
-            cout << value;
+            cout << value << flush;
 #       endif
         return *this;
     }
