@@ -48,6 +48,7 @@ cog.outl("#endif")
 
 using namespace std;
 
+typedef unsigned char      uchar;
 typedef long long          llong;
 typedef unsigned long long ullong;
 typedef long double        ldouble;
