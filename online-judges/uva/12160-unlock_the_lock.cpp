@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+
+#define forn(i, n) for (int i = 0; i < (n); ++i)
+#define sqr(x)     ((x) * (x))
+#define eq(x, y)   (((x) > (y) ? (x) - (y) : (y) - (x)) <= eps)
+#define sz(x)      int((x).size())
+#define all(x)     (x).begin(), (x).end()
+#define rall(x)    (x).rbegin(), (x).rend()
+#define pb         push_back
+#define mp         make_pair
+#define eb         emplace_back
+#define mt         make_tuple
+#define eps        1e-8
+#define inf        int(1e9)
+#define linf       llong(4e18)
+
+using namespace std;
+
+struct debug_t {
+  template<typename T>
+  debug_t& operator << (const T& o) {
+#   ifdef LOCAL_DEBUG
+    cout<<o<<flush;
+#   endif
+    return *this;
+  }
+} debug;
+
+#define TIMESTAMP(msg) debug << "[" msg "] Time = " << clock() * 1.0 / CLOCKS_PER_SEC << '\n' 
+#define DBG(x) debug << "[" #x "] = " << x << '\n'
+
+typedef unsigned char      uchar;
+typedef long long          llong;
+typedef unsigned long long ullong;
+typedef long double        ldouble;
+typedef vector<int>        vi;
+typedef vector<vi>         vvi;
+typedef vector<double>     vd;
+typedef vector<vd>         vvd;
+typedef pair<int,int>      pii;
+
+int main() {
+#ifdef LOCAL_PROJECT
+  freopen("input.txt","r",stdin);
+#endif
+  
+  int start, target, r;
+  int ci = 1;
+  while( cin>>start>>target>>r, r ) {
+    vi w(r);
+    forn(i,r)
+      cin>>w[i];
+    queue<int> q;
+    vi used(10*1000), dist(10*1000);
+    q.push(start);
+    used[start] = 1;
+    while( !q.empty() ) {
+      int cur = q.front(); q.pop();
+      if( cur == target ) {
+        cout<<"Case "<<ci++<<": "<<dist[cur]<<"\n";
+        break;
+      }
+      forn(i,r) {
+        int nxt = (cur + w[i])%10000;
+        if( !used[nxt] )
+          q.push(nxt), used[nxt] = 1, dist[nxt] = dist[cur] + 1;
+      }
+    }
+    if( !used[target] ) 
+      cout<<"Case "<<ci++<<": "<<"Permanently Locked\n";
+  }
+  
+  TIMESTAMP("end");
+  return 0;
+}
