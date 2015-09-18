@@ -20,11 +20,17 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#ifdef LOCAL_PROJECT
-#   include <conio.h>
-#else
-#   undef VERBOSE
-#endif
+#if 0 //[[[cog
+if getch:
+    cog.outl("#ifdef " + LOCAL)
+    cog.outl("#   include <conio.h>")
+    cog.outl("#else")
+else:
+    cog.outl("#ifndef " + LOCAL)
+cog.outl("#   undef VERBOSE")
+cog.outl("#endif")
+#endif //]]]
+//[[[end]]]
 
 #define forn(i, n) for (int i = 0; i < (n); ++i)
 #define sqr(x)     ((x) * (x))
@@ -65,17 +71,42 @@ struct debug_t {
 
 
 int main() {
-#   ifdef LOCAL_PROJECT
-        freopen(".in", "r", stdin);
-#   else
-        freopen(".in", "r", stdin);
-        freopen(".out", "w", stdout);
-#   endif
+#if 0 //[[[cog
+shared_input = debug_in and debug_in == release_in
+shared_output = debug_out and debug_out == release_out
+if shared_input:
+    cog.outl(4 * ' ' + 'freopen("%s", "r", stdin);' % debug_in)
+    debug_in = release_in = ""
+if shared_output:
+    cog.outl(4 * ' ' + 'freopen("%s", "w", stdout);' % debug_out)
+    debug_out = release_out = ""
+if not (shared_input and shared_output) and (debug_in or debug_out or release_in or release_out):
+    if debug_in or debug_out:
+        cog.outl("#   ifdef " + LOCAL)
+        if debug_in:
+            cog.outl(8 * ' ' + 'freopen("%s", "r", stdin);' % debug_in)
+        if debug_out:
+            cog.outl(8 * ' ' + 'freopen("%s", "w", stdout);' % debug_out)
+        if release_in or release_out:
+            cog.outl("#   else")
+    else:
+        cog.outl("#   ifndef " + LOCAL)
+    if release_in:
+        cog.outl(8 * ' ' + 'freopen("%s", "r", stdin);' % release_in)
+    if release_out:
+        cog.outl(8 * ' ' + 'freopen("%s", "w", stdout);' % release_out)
+    cog.outl("#   endif")
+#endif //]]]
+//[[[end]]]
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
-#   ifdef LOCAL_PROJECT
-        _getch();
-#   endif
+#if 0 //[[[cog
+if getch:
+    cog.outl("#   ifdef " + LOCAL)
+    cog.outl("        %s();" % getch)
+    cog.outl("#   endif")
+#endif //]]]
+//[[[end]]]
     return 0;
 }

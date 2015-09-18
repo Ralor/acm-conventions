@@ -1,4 +1,4 @@
-//Кривые зеркала.
+п»ї//РљСЂРёРІС‹Рµ Р·РµСЂРєР°Р»Р°.
 #define VERBOSE
 #define _USE_MATH_DEFINES
 #define _CRT_SECURE_NO_WARNINGS

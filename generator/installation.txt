@@ -1,0 +1,3 @@
+http://python.org/downloads
+http://upx.sourceforge.net
+pip install cogapp py2exe
