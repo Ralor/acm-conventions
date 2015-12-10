@@ -1,5 +1,5 @@
 [repository]
-native = CRLF
+native = LF
 
 [eol]
 only-consistent = False
