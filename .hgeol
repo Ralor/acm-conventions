@@ -1,0 +1,8 @@
+[repository]
+native = CRLF
+
+[eol]
+only-consistent = False
+
+[patterns]
+** = native
